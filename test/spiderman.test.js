@@ -11,7 +11,7 @@
 
   describe("Suite de pruebas #2", () => {
     test('Case 1: Probando mi spiderverse', () => {
-        //escribimos el codigo que queremos usar tal cual
+       //Escribimos el codigo que queremos usar tal cual
       const spidyMaguire = new Spiderman("Peter Parker",46,"Tobey Maguire",4,"Columbia Pictures")
     
       //Validamos que el codigo funcione de la manera esperada
@@ -22,5 +22,15 @@
       //1.- En el primer caso de error nos menciona que Spiderman no esta definido, asi que creamos la clase en /app
       //2.- En el segundo caso de error nos menciona que no esta definido name, entonces se debe de crear algun set 
       //en la clase que guarde el nombre
+      //3.- Despues de crear el constructor con todos los parametros, deberia de pasar la prueba
+        //expect(spidyMaguire.movies).toBe("4"); //En efecto va a fallar dado que es cadena y no numero
+            //Para confiar mas en si el codigo funciona como deberia, hacemos que el test falle para ver 
+            //el comportamiento del codigo
+
+      //4.-Creamos otro objeto de la misma clase y validamos
+      const spidyHolland = new Spiderman("Peter Parker",23,"Tom Holland","4","Marvel Studios & Columbia Pictures")
+      expect(spidyHolland.actor).toBe("Tom Holland")
+      expect(spidyHolland.movies).toBe(4) //ESTA PRUEBA NOS DA ERROR DADO QUE LA CLASE RECIBE UNA CADENA Y NO UN NUMERO
+      // En conclusión nuestro codigo funciona de la manera deseada
     });
   })
